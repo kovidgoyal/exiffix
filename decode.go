@@ -4,12 +4,12 @@ import (
 	"image"
 	"io"
 
-	"github.com/disintegration/imaging"
+	"github.com/kovidgoyal/imaging"
 	"github.com/rwcarlsen/goexif/exif"
 )
 
-//Decode is image.Decode handling orientation in EXIF tags if exists.
-//Requires io.ReadSeeker instead of io.Reader.
+// Decode is image.Decode handling orientation in EXIF tags if exists.
+// Requires io.ReadSeeker instead of io.Reader.
 func Decode(reader io.ReadSeeker) (image.Image, string, error) {
 	img, fmt, err := image.Decode(reader)
 	if err != nil {
